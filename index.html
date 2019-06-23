@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Gallery</title>
+</head>
+
+<body onload="initGallery()">
+        <span class="logo"><button class="keyword-button " onclick="toggleKeyword()"><i class="fa fa-bar-chart"></i></button></span>
+    <section class="body-container flex column align-center">
+        <section class="gallery-button-continer flex justify-content">
+                <button class="gallery-button" onclick="toggleGallery()"></button>
+            </section>
+        <header class="header flex align-center space-around">
+            <h2 class="header-text">CHOOSE YOUR MEME</h2>
+        </header>
+        <section class="key-word-continer flex column space-around" id="key-word-continer">
+        </section>
+        <main class="gallery-container">
+            <div class="serch-bar flex justify-center align-center">
+              
+                <input class="key-search" placeholder=" Key word " list="key-word" name="key-word" oninput="searchKeyWords(this.value)">
+                <datalist id="key-word">
+
+                </datalist>
+                <span class="search"> 🔎</span>
+            </div>
+
+            <section class="image-container grid">
+
+            </section>
+
+
+        </main>
+
+        <footer class="footer column align-center">
+            <h3 class="copy-right">© 2019 Meme.com - All Rights Reserved - Find more free Templates at Pinterst.com</h3>
+            <div class="social-continer flex">
+                <div class="social-squer ">
+                    <a href="#" class="fa fa-facebook" ></a>
+                </div>
+                <div class="social-squer">
+                    <a  class="fa fa-at" href="mailto:vanunu24@gmail.com"></a>
+                </div>
+               
+        </footer>
+    </section>
+
+    <script src="js/util-service.js"></script>
+    <script src="js/meme-service.js"></script>
+    <script src="js/gallery-app.js"></script>
+    <script src="js/meme-app.js"></script>
+</body>
+
+</html>

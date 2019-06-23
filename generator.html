@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Meme Generator</title>
+</head>
+
+<body onload="initMeme()">
+    <header class="meme-header flex column align-center space-between">
+        <h2 class="header-text">MEME GENERATOR</h2>
+        <section class="top-bar flex space-between">
+            <button class="btn home-page" onclick="onOpenGallery()">Back to Gallery &nbsp;<i
+                    class="fas fa-backward"></i></button>
+            <button class="btn share" onclick="">Share &nbsp;<i class="fab fa-facebook-square"></i></button>
+            <a type="button" class="btn download flex align-center" id="download"
+                onclick="onDownloadMeme(this)">Download &nbsp;<i class="fas fa-file-download"></i></a>
+        </section>
+    </header>
+    <section class="body-container flex column align-center">
+        <main class="canvas-container flex">
+
+            <canvas id="meme-canvas" width="600" height="500" ontap="ontapping(event)"
+                onmousedown="onCanvasDragg(event)"></canvas>
+            <section class="tool-bar flex column align-center space-around">
+                <input class="text-box" type="text" placeholder="Add your text here" id="text-box"
+                    oninput="onAddText(this.value)" autofocus>
+                <section class="add-remove-text flex justify-center space-around">
+                    <button onclick="onRemoveTextBox(event)"><i class="fas fa-trash"></i></button>
+                    <button onclick="onAddTextBox(event)"><i class="fas fa-plus"></i></button>
+                </section>
+
+                <select onchange="onChangFontStyle(this.value)" class="font-style" name="" id="font-style">
+                    <option value="Impact">Impact</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Cursive">Cursive</option>
+                </select>
+                <section class="color-container flex align-center justify-center">
+                    <span>Text Color : &nbsp;</span>
+                    <input class="change-color" onchange="onChangTextColor(this.value)" type="color" value="#ffffff"
+                        id="text-color">
+                </section>
+                <section class="font-size-container flex column">
+                    <section class="range-container flex justify-center align-center">
+                        <span>Font size :</span> <span class="range-value flex justify-center" id="font-range">30</span>
+                    </section>
+                    <input class="slider" oninput="onChangFontSize(this.value)" type="range" max="70" min="16"
+                        value="30" id="text-size">
+                </section>
+                <section class="align-container flex justify-center">
+                    <input class="btn align-text" type="button" value="left" onclick="onChangeAlignment(this.value)">
+                    <input class="btn align-text" type="button" value="center" onclick="onChangeAlignment(this.value)">
+                    <input class="btn align-text" type="button" value="right" onclick="onChangeAlignment(this.value)">
+                </section>
+            </section>
+        </main>
+
+        <footer class="footer column align-center">
+                <h3 class="copy-right">© 2019 Meme.com - All Rights Reserved - Find more free Templates at Pinterst.com</h3>
+                <div class="social-continer flex">
+                    <div class="social-squer ">
+                        <a href="#" class="fa fa-facebook" ></a>
+                    </div>
+                    <div class="social-squer">
+                        <a  class="fa fa-at" href="mailto:vanunu24@gmail.com"></a>
+                    </div>
+                   
+            </footer>
+
+
+        <script src="js/util-service.js"></script>
+        <script src="js/meme-service.js"></script>
+        <script src="js/gallery-app.js"></script>
+        <script src="js/meme-app.js"></script>
+</body>
+
+</html>
